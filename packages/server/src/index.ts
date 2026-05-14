@@ -5,6 +5,7 @@ import {hc} from 'hono/client';
 import {HTTPException} from 'hono/http-exception';
 import {Env} from './env.js';
 import {getDummyAPI} from './api/dummy.js';
+import {getEncryptionSessionAPI} from './api/encryption-session.js';
 
 export type {Env};
 
@@ -30,10 +31,12 @@ export function createServer<CustomEnv extends Env>(
 	const app = new Hono<{Bindings: CustomEnv}>();
 
 	const dummy = getDummyAPI(options);
+	const encryptionSession = getEncryptionSessionAPI(options);
 
 	return app
 		.use('/*', corsSetup)
 		.route('/', dummy)
+		.route('/api', encryptionSession)
 		.onError((err, c) => {
 			const config = c.get('config');
 			const env = config?.env || {};

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import "named-logs-context";
-import { createServer, type Env } from "template-agnostic-server-app";
+import { createServer, type Env } from "openfort-backend-app";
 import { serve } from "@hono/node-server";
 import { RemoteLibSQL } from "remote-sql-libsql";
 import { createClient } from "@libsql/client";
@@ -26,10 +26,10 @@ async function main() {
   const program = new Command();
 
   program
-    .name("template-agnostic-server-nodejs")
+    .name("openfort-backend-nodejs")
     .version(pkg.version)
-    .usage(`template-agnostic-server-nodejs [--port 2000] [--sql <sql-folder>]`)
-    .description("run template-agnostic-server-nodejs as a node process")
+    .usage(`openfort-backend-nodejs [--port 2000] [--sql <sql-folder>]`)
+    .description("run openfort-backend-nodejs as a node process")
     .option("-p, --port <port>");
 
   program.parse(process.argv);

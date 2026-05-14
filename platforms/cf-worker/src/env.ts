@@ -1,4 +1,4 @@
-import {Env} from 'template-agnostic-server-app';
+import {Env} from 'openfort-backend-app';
 
 export type CloudflareEnv = Env & {
 	DB: D1Database;

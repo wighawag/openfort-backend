@@ -82,9 +82,9 @@ cd my-server
 ```
 
 Find and replace all occurrences:
-- `template-agnostic-server-app` → `my-server-app`
-- `template-agnostic-server-cf-worker` → `my-server-cf-worker`
-- `template-agnostic-server-nodejs` → `my-server-nodejs`
+- `openfort-backend-app` → `my-server-app`
+- `openfort-backend-cf-worker` → `my-server-cf-worker`
+- `openfort-backend-nodejs` → `my-server-nodejs`
 - `template-agnostic-db` → `my-server-db`
 
 ### 2. Define Your Environment
